@@ -1,0 +1,5 @@
+---
+hostname: rpi3.lupu.online
+wifi_ssid: stw-home24
+wifi_pass: 1sw-home
+serial_device: '/dev/ttyUSB3'

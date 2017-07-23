@@ -1,0 +1,7 @@
+---
+- include: packages.yml tags=packages
+- include: udhcpd.yml tags=udhcpd
+- include: hostapd.yml tags=hostapd
+- include: iptables.yml tags=iptables
+- include: network.yml tags=network
+- include: services.yml tags=services

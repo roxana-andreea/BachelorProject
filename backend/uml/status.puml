@@ -1,0 +1,13 @@
+@startuml
+actor User
+database Server
+control VSS
+entity OBD
+autonumber
+
+VSS -> OBD: Information Request
+OBD -> VSS: Information Response
+VSS -> Server: Upload Information
+Smartphone <-- Server: Download Information
+Smartphone --> User: Display Information in Dashboard
+@enduml

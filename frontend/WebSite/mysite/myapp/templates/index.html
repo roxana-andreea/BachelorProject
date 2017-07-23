@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html >
+  <head>
+     <style>
+       #google_map_div {
+        width: 100%;
+        height: 600px;
+      }
+    </style>
+
+    <meta charset="UTF-8">
+    <title>Remote Car Control</title>
+    
+    
+    
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/main_style.css' %}">
+
+    
+    
+    
+  </head>
+
+  <body>
+    <!--<h1>Pure CSS Tabs <span>Just CSS, No JS!</span></h1>-->
+<h1><img src="{% static 'logo.jpg' %}" height="120" width="120"></h1>
+
+
+
+
+
+<ul class="tabs">
+  
+    <li>
+        <input type="radio" name="tabs" id="tab2" checked/>
+        <label for="tab2">Location</label>
+        <div id="tab-content2" class="tab-content">
+          
+          <div id="google_map_div"></div>
+        </div>
+    </li>
+    <li>
+        <input type="radio" name="tabs" id="tab3" />
+        <label for="tab3">Alerts</label>
+        <div id="tab-content3" class="tab-content">
+          <table style="padding: 5px">
+            <tr style="display: none">
+              <td>
+                <img src="{% static 'alert2.png' %}" height="32" width="32" />
+              </td>
+              <td style="padding-left: 10px">
+                <p id="alert_speed_p"> Speed limit exceeded.</p>
+              </td>
+            </tr>
+            <tr style="display: none">
+              <td>
+                <img src="{% static 'alert2.png' %}" height="32" width="32" />
+              </td>
+              <td style="padding-left: 10px">
+                <p id="alert_temp_p"> Temperature limit exceeded.</p>
+              </td>
+            </tr>
+            <tr style="display: none">
+              <td>
+                <img src="{% static 'alert2.png' %}" height="32" width="32" />
+              </td>
+              <td style="padding-left: 10px">
+                <p id="alert_fuel_p"> Fuel limit exceeded.</p>
+              </td>
+            </tr>
+          </table>
+    </li>
+   <li>
+        <input type="radio" name="tabs" id="tab4" />
+        <label for="tab4">Status</label>
+        <div id="tab-content4" class="tab-content">
+        <div class="form">
+
+         <center>
+         <div class="Table">
+      <div class="Row">
+          <div class="Cell">
+              <p id="status_temp">No Temp status</p>
+          </div>
+          <div class="Cell">
+             <p id="status_speed">No Speed status</p>
+          </div>
+      </div>
+      <div class="Row">
+          <div class="Cell">
+              <p id="status_fuel">No Fuel status</p>
+          </div>
+          <div class="Cell">
+             <p id="status_lock">No Lock status</p>
+
+          </div>
+      </div>
+     
+      </center>
+</div>
+  
+
+    </li>
+    <li>
+        <input type="radio" name="tabs" id="tab5"  />
+        <label for="tab5">Settings</label>
+        <div id="tab-content5" class="tab-content">
+        <center>
+          <select  id="select_blue" onChange="deviceSelectOnChange()">
+              <option selected="selected">Loading cars</option>
+              <option>BMW</option>
+              <option>Audi</option>
+              <option>Dacia</option>
+          </select></center>
+
+          <form action="/myapp/alert_save/" method="post">
+            {% csrf_token %}
+            <center>Add the following parameters:</center>
+            <center>
+                       
+                       <input name="alert_fuel_limit" type="text" placeholder="Fuel limit" 
+                          class="textox"/>
+
+            </center>
+            <center>
+                      
+                       <input name="alert_speed_limit" type="text" placeholder="Speed limit"
+                          class="textox"/>
+            </center><center>
+                       
+                       <input name="alert_temp_limit" type="text" placeholder="Temperature limit"
+                          class="textox"/>
+            </center>
+          
+          <center>
+          <input class ="save_button" type="submit" value="Save" style="float: center;">
+          </center>
+          </form>
+
+          <form action="/myapp/logout/" method="post" name="LogoutForm">
+            {% csrf_token %}
+            <input class = "exit-btn exit-btn-1" type="submit" value="Log out" style="float: right;">
+          </form>
+
+                   
+   
+</div>
+
+     
+        
+    </li>
+</ul>
+
+<br style="clear: both;" />
+
+
+
+
+<script>
+
+var map = null;
+
+function initMap() {
+  var mapDiv = document.getElementById('google_map_div');
+  map = new google.maps.Map(mapDiv, {
+      center: {lat: 44.42, lng: 26.10},
+      zoom: 15,
+  });
+
+  // var position = new google.maps.LatLng(-34.397, 150.644);
+
+  /*var marker = new google.maps.Marker({
+    position: map.getCenter(),
+    icon: "{% static 'car.png' %}",
+    map: map
+  });*/
+}
+</script>
+
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6hM8bL2YgyUB7SOn6ngdgqO1t6XdMXpU&callback=initMap">
+</script>
+
+
+<script>
+
+var username = "{{ raw_login }}";
+var password = "{{ raw_password }}";
+var selected_device_id = "-1";
+
+var pidTemp = "0105";
+var pidSpeed = "010D";
+var pidFuel = "33";
+var pidLock = "44";
+var pidToIdMap = {};
+pidToIdMap[pidTemp] = 'status_temp';
+pidToIdMap[pidSpeed] = 'status_speed';
+pidToIdMap[pidLock] = 'status_lock';
+pidToIdMap[pidFuel] = 'status_fuel';
+var pidOfInterest = [pidTemp, pidSpeed, pidLock, pidFuel];
+
+var pidToStatusAppend = {};
+pidToStatusAppend[pidTemp] = " °C";
+pidToStatusAppend[pidSpeed] = " km/h";
+pidToStatusAppend[pidFuel] = " % fuel";
+pidToStatusAppend[pidLock] = "";
+
+
+var alert_fuel_limit = {{ alert_fuel_limit|default:999}};
+var alert_temp_limit = {{ alert_temp_limit|default:999}};
+var alert_speed_limit = {{ alert_speed_limit|default:999}};
+
+var pidToAlertPId = {};
+pidToAlertPId[pidTemp] = 'alert_temp_p';
+pidToAlertPId[pidSpeed] = 'alert_speed_p';
+pidToAlertPId[pidFuel] = 'alert_fuel_p';
+
+var pidToAlertValue = {};
+pidToAlertValue[pidTemp] = {'limit': alert_temp_limit, 'sign': 1};
+pidToAlertValue[pidSpeed] = {'limit': alert_speed_limit, 'sign': 1};
+pidToAlertValue[pidFuel] = {'limit': alert_fuel_limit, 'sign': -1};
+
+/*var alerts_array = [alert_fuel_limit, alert_speed_limit, alert_temp_limit];
+var alerts_sign = [-1, 1, 1];*/
+
+function buildXHRRequest(url) {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', url, true);
+  xhr.setRequestHeader('Authorization', 'Basic ' + btoa(username + ":" + password));
+  return xhr;
+}
+
+function refreshDevices() {
+  
+  var xhr = buildXHRRequest("http://vss.lupu.online:8080/devices/");
+  
+  xhr.onreadystatechange = function() { 
+
+        if (xhr.readyState == 4 && xhr.status == 200)
+            refreshDevicesProcessResponse(xhr.responseText);
+  }
+  xhr.send();
+}
+
+function refreshDevicesProcessResponse(responseText) {
+  var my_select = document.getElementById("select_blue");
+  var length = my_select.options.length;
+  for (i = 0; i < length; i++) {
+    my_select.options[i] = null;
+  }
+  my_select.options.length = 0;
+
+  var devicesJSON = JSON.parse(responseText);
+  for (var i = 0; i < devicesJSON._items.length; i++) {
+    var device = devicesJSON._items[i];
+
+    var option = document.createElement("option");
+    option.text = device['name'];
+    option.value = device['id'];
+    
+    my_select.add(option);
+  }
+
+  my_select.disabled = false;
+  // The new selected car is the first one from the list.
+  if (my_select.options.length >= 0) {
+    selected_device_id = my_select.options[0].value;
+  }
+}
+
+function deviceSelectOnChange() {
+  var my_select = document.getElementById("select_blue");
+  selected_device_id = my_select[my_select.selectedIndex].value;
+
+  document.getElementById("status_temp").innerHTML = "No Temp status";
+  document.getElementById("status_fuel").innerHTML = "No Fuel status";
+  document.getElementById("status_speed").innerHTML = "No Speed status";
+  document.getElementById("status_lock").innerHTML = "No Lock status";
+
+  document.getElementById("alert_fuel_p").parentNode.parentNode.style.display = "none";
+  document.getElementById("alert_speed_p").parentNode.parentNode.style.display = "none";
+  document.getElementById("alert_temp_p").parentNode.parentNode.style.display = "none";
+}
+
+function buildXHRRequestForInputs(pid, device_id) {
+  return buildXHRRequest('http://vss.lupu.online:8080/inputs/?where={\"pid\":\"' + pid + '\",\"id_device\":\"' + device_id + '\"}&sort=-_created&?t=' + Math.random());
+}
+
+
+function refreshStatusDataReq(pid) {
+  var xhr = buildXHRRequestForInputs(pid, selected_device_id);
+  
+  xhr.onreadystatechange = function() { 
+    if (xhr.readyState == 4 && xhr.status == 200)
+        refreshStatusDataRespone(xhr.responseText);
+  }
+  xhr.send();
+}
+
+
+var status_refreshing = 0;
+function refreshStatusData() {
+  if (selected_device_id == "-1") {
+    return;
+  }
+  if (status_refreshing > 0) {
+    return;
+  }
+  for (var i = 0; i < pidOfInterest.length; i++) {
+    var pid = pidOfInterest[i];
+    status_refreshing = status_refreshing + 1;
+    refreshStatusDataReq(pid);
+  }
+}
+
+function getAlertMessage(pid, limit, value) {
+  var pToW = {};
+  pToW[pidFuel] = "Fuel";
+  pToW[pidSpeed] = "Speed";
+  pToW[pidTemp] = "Temperature";
+
+  //alert(pid + " " + limit + " " + value);
+  return pToW[pid] + " limit of " + limit + " was exceeded: " + value;
+}
+
+
+function refreshStatusDataRespone(responseText) {
+  var response = JSON.parse(responseText);
+  if (response._items.length > 0) {
+    item = response._items[0];
+    var pid = item['pid'];
+    var value_string = item['value'];
+    var node = document.getElementById(pidToIdMap[pid]);
+    node.innerHTML = value_string + pidToStatusAppend[pid];
+
+    if (pidToAlertPId[pid]) {
+      var alert_node = document.getElementById(pidToAlertPId[pid]);
+      var limit = pidToAlertValue[pid]['limit'];
+      var sign = pidToAlertValue[pid]['sign'];
+      var value_float = parseFloat(value_string);
+      var my_str = getAlertMessage(pid, limit, value_float);
+      //alert(my_str);
+      alert_node.innerHTML = my_str;
+      if (value_float * sign >= limit * sign) {
+        alert_node.parentNode.parentNode.style.display = "block";
+      } else {
+        alert_node.parentNode.parentNode.style.display = "none";
+      }
+    }
+  } else {
+    //alert(responseText);
+  }
+  status_refreshing = status_refreshing - 1;
+}
+
+var position_refreshing = 0;
+
+function refreshMapPosition() {
+  if (selected_device_id == "-1") {
+    return;
+  }
+  if (position_refreshing > 0) {
+    return;
+  }
+  position_refreshing = 1;
+
+  var xhr = buildXHRRequestForInputs(99, selected_device_id);
+  xhr.onreadystatechange = function() { 
+    if (xhr.readyState == 4 && xhr.status == 200)
+        refreshMapPositionResponse(xhr.responseText);
+  }
+  xhr.send();
+}
+
+
+
+  // var position = new google.maps.LatLng(-34.397, 150.644);
+
+  /*var marker = new google.maps.Marker({
+    position: map.getCenter(),
+    icon: "{% static 'car.png' %}",
+    map: map
+  });*/
+
+var marker;
+
+function refreshMapPositionResponse(responseText) {
+  var response = JSON.parse(responseText);
+  if (response._items.length > 0) {
+    item = response._items[0];
+    var pid = item['pid'];
+    var value = item['value'];
+    var values = value.split(",");
+    var latitude = parseFloat(values[0].substr(0, 2)) + parseFloat(values[0].substr(2)) / 60;
+    var long = parseFloat(values[2].substr(0, 3)) + parseFloat(values[2].substr(3)) / 60;
+
+    if (map != null) {
+      var position = new google.maps.LatLng(latitude, long);
+  
+      if (marker == null) {
+        marker = new google.maps.Marker({
+          position: position,
+          icon: "{% static 'car.png' %}",
+          map: map,
+        });
+        map.panTo(position);
+      } else {
+        if (marker.getMap() != map) {
+          marker.setMap(map);
+        }
+        marker.setPosition(position);
+      }
+    }
+  } else {
+    if (marker != null) {
+      marker.setMap(null);
+    }
+  }
+  position_refreshing = 0;
+}
+
+refreshDevices();
+
+refreshStatusData();
+refreshMapPosition();
+
+setInterval(refreshStatusData, 3000);
+setInterval(refreshMapPosition, 3000);
+</script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+---
+- template: backup=yes  src=etc/hostapd/hostapd.conf dest=/etc/hostapd/hostapd.conf
+  notify:
+    - restart hostapd
+- template: backup=yes  src=etc/default/hostapd dest=/etc/default/hostapd
+  notify:
+    - restart hostapd

@@ -1,0 +1,16 @@
+---
+- template: src=etc/network/interfaces.d/{{ item }} dest=/etc/network/interfaces.d/{{ item }}
+  with_items:
+    - eth0
+    - wlan0
+  notify:
+    - restart network
+
+- lineinfile: dest=/etc/network/interfaces regexp='{{ item }}' state=absent
+  with_items:
+    - eth0
+    - wlan0
+    - wlan1
+    - wpa-conf
+  notify:
+    - restart network

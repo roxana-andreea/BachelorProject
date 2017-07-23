@@ -1,0 +1,8 @@
+---
+- mysql_db: name=vss state=present
+- mysql_db: name=django state=present
+- mysql_db: name=db state=present
+- mysql_user: name=rcc password='1!rcc' priv='vss.*:ALL' state=present host="%"
+- mysql_user: name=vss password='1!vss' priv='django.*:ALL' state=present host="%"
+- mysql_user: name=vss password='1!vss' priv='db.*:ALL' state=present host="%"
+- mysql_user: name=root password='1!mysql' priv='*.*:ALL' state=present host="%"

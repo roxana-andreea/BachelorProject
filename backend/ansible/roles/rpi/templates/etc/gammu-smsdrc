@@ -1,0 +1,31 @@
+# Configuration file for Gammu SMS Daemon
+
+# Gammu library configuration, see gammurc(5)
+[gammu]
+# Please configure this!
+port = {{ serial_device }}
+connection = at
+# Debugging
+#logformat = textall
+logformat = textalldate
+
+# SMSD configuration, see gammu-smsdrc(5)
+[smsd]
+service = files
+#logfile = syslog
+logfile = /var/log/gammu-smsd.log
+# Increase for debugging information
+#debuglevel = 0
+debuglevel = 1
+#include_numbers = 0753174860
+#PIN=1234
+RunOnReceive = sudo /usr/local/sbin/sms_receive.py
+
+# Paths where messages are stored
+inboxpath = /var/spool/gammu/inbox/
+outboxpath = /var/spool/gammu/outbox/
+sentsmspath = /var/spool/gammu/sent/
+errorsmspath = /var/spool/gammu/error/
+
+[include_numbers]
+number1 = +40753174860

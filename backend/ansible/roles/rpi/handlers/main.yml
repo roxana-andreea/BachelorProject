@@ -1,0 +1,13 @@
+---
+- name: restart ddclient
+  service: name=ddclient state=restarted
+- name: restart ser2net
+  shell: killall -9 ser2net; /usr/local/sbin/ser2net
+- name: restart cron
+  service: name=cron state=restarted
+- name: restart network
+  service: name=networking state=restarted
+- name: restart supervisor
+  service: name=supervisor state=restarted
+- name: restart gammu
+  service: name=gammu-smsd state=restarted

@@ -1,0 +1,15 @@
+---
+# - template: src=etc/ddclient.conf dest=/etc/ddclient.conf backup=yes
+#   notify:
+#     - restart ddclient
+# - template: src=etc/default/ddclient dest=/etc/default/ddclient backup=yes
+#   notify:
+#     - restart ddclient
+#
+
+- shell: cd /root/backend/rpi/dnsimple-python; python3 setup.py build; python3 setup.py install
+- shell: cd /root/backend/rpi/ipgetter; python3 setup.py build; python3 setup.py install
+
+- template: src=etc/cron.hourly/dnsimple dest=/etc/cron.hourly/dnsimple
+  notify:
+    - restart cron

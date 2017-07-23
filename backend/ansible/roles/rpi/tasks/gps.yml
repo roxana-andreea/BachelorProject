@@ -1,0 +1,4 @@
+---
+- template: src=etc/supervisor/conf.d/rpi-gps.conf dest=/etc/supervisor/conf.d/rpi-gps.conf
+  notify:
+    - restart supervisor

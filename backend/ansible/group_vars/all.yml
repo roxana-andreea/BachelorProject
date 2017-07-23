@@ -1,0 +1,25 @@
+---
+wifi_interface: wlan0
+wifi_netmask: 255.255.255.0
+wifi_gateway: 10.6.0.1
+wifi_network: 10.6.0.0
+wifi_ssid: stw-rpi
+wifi_hw_mode: g
+wifi_channel: 9
+wifi_pass: 1sw-342c2
+
+dns_user: thbst84
+dns_pass: 1sw-342c2
+dns_fqdn: vss.no-ip.biz
+
+net_int: eth0
+modem_int: ppp0
+
+nameserver1: 8.8.8.8
+nameserver2: 8.8.4.4
+domain: localdomain
+
+serial_port: '127.0.0.1,2000'
+serial_timeout: 5
+serial_device: '/dev/ttyUSB2'
+serial_baudrate: 115200

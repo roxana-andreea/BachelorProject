@@ -1,0 +1,14 @@
+@startuml
+actor User
+database Server
+control VSS
+entity GPS
+autonumber
+
+VSS -> GPS: Vehicle Geolocation Request
+GPS --> VSS: Vehicle Geolocation Information
+VSS -> Server: Upload Location
+Smartphone <-- Server: Download Location
+Smartphone -> GPS: User Geolocation Request
+Smartphone -> User: Display Alert on Perimeter Violation
+@enduml

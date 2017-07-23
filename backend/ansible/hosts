@@ -1,0 +1,5 @@
+[vss]
+localhost	ansible_connection=local
+[rpi]
+rpi2	ansible_connection=local
+rpi3    ansible_connection=local

@@ -1,0 +1,4 @@
+pyserial
+linereader
+readerthread
+ConfigParser

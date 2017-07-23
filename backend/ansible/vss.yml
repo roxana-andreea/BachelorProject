@@ -1,0 +1,5 @@
+---
+- hosts: vss
+  gather_facts: yes
+  roles:
+    - { role: vss, tags: vss }

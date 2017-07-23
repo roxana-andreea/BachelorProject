@@ -1,0 +1,17 @@
+@startuml
+actor User
+database Server
+control VSS
+entity OBD
+autonumber
+
+User -> VSS: Register Authorized Phone Number
+User -> VSS: Register PIN CODE
+User -> VSS: SMS with Car Control Command
+VSS -> User: Check Authorization Information
+VSS -> OBD: Send Command
+OBD -> VSS: Respond with Command Status
+VSS -> Server: Upload Command Status
+Smartphone <-- Server: Download Command Status
+Smartphone --> User: Display Command Status
+@enduml

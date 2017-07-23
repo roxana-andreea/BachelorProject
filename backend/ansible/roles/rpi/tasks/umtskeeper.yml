@@ -1,0 +1,18 @@
+---
+- file: path=/opt/umtskeeper state=directory
+- get_url: url=http://mintakaconciencia.net/squares/umtskeeper/src/umtskeeper.tar.gz dest=/opt/umtskeeper/
+- unarchive: src=/opt/umtskeeper/umtskeeper.tar.gz dest=/opt/umtskeeper/ copy=no
+- file: path=/opt/umtskeeper/sakis3g mode=750
+- file: path=/opt/umtskeeper/umtskeeper mode=750
+- template: src=opt/umtskeeper/umtskeeper.conf dest=/opt/umtskeeper/umtskeeper.conf mode=600
+# /opt/umtskeeper/umtskeeper --sakisoperators "USBINTERFACE='3' OTHER='USBMODEM' USBMODEM='05c6:9000' APN='CUSTOM_APN' CUSTOM_APN='internet' APN_USER='0' APN_PASS='0'" --sakisswitches "--sudo --console" --devicename "SIM5218" --log --silent --nat 'no'
+- file: path=/var/www/html/stats state=directory
+- command: creates="var/www/html/stats/{{item}}" cp /opt/umtskeeper/{{item}} /var/www/html/stats/
+  with_items:
+    - style.css
+    - robots.txt
+    - favicon.ico
+- template: src=etc/supervisor/conf.d/umtskeeper.conf dest=/etc/supervisor/conf.d/umtskeeper.conf
+  notify:
+    - restart supervisor
+#TODO .htacces

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd /root/backend/vss
+gunicorn --access-logfile - -b 127.0.0.1:5000 api.api:app

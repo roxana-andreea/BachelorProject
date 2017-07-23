@@ -1,0 +1,7 @@
+---
+- name: restart udhcpd
+  service: name=udhcpd state=restarted
+- name: restart hostapd
+  service: name=hostapd state=restarted
+- name: restart iptables
+  service: name=iptables state=restarted

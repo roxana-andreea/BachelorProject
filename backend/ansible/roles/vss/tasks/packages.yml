@@ -1,0 +1,56 @@
+---
+# mandatory
+- apt: name={{item}}
+  with_items:
+    - vim
+    - lsof
+    - zip
+    - bc
+    - mlocate
+    - apache2
+    - libapache2-mod-wsgi-py3
+    - whois
+    - mysql-server
+ #   - php5-mysqlnd
+    - php5
+#    - libapache2-mod-php5
+#    - php5-mcrypt
+    - apache2-utils
+    - phpmyadmin
+    - python3-mysqldb
+    - python3-pip
+    - tree
+    - supervisor
+
+# # optional
+# - apt: name={{item}}
+#   with_items:
+#     - pmount
+#     - samba
+#     - smbclient
+#     - xrdp
+#     - ufw
+#     - wiringpi
+#     - i2c-tools
+#     - python3-serial
+#     - python-usb
+#     - wvdial
+#     - setserial
+
+- pip:  executable=pip3  name={{item}}
+  with_items:
+#    - django
+    - ipython
+    - mysqlclient
+#    - flask
+#    - bottle
+    - Flask
+    - Flask-Script
+    - Flask-SQLAlchemy
+    - WTForms
+    - Flask-RESTful
+    - Sphinx
+    - flask-autodoc
+    - sphinxcontrib-httpdomain
+    - Flask-Restless
+    - gunicorn

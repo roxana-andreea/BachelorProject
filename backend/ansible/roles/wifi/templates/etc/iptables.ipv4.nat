@@ -1,0 +1,15 @@
+{{ansible_managed}}
+*filter
+:INPUT ACCEPT [2066:178137]
+:FORWARD ACCEPT [0:0]
+:OUTPUT ACCEPT [829:101932]
+-A FORWARD -i {{modem_interface}} -o {{wifi_interface}} -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A FORWARD -i {{wifi_interface}} -o {{modem_interface}} -j ACCEPT
+COMMIT
+*nat
+:PREROUTING ACCEPT [2:269]
+:INPUT ACCEPT [1:68]
+:OUTPUT ACCEPT [0:0]
+:POSTROUTING ACCEPT [0:0]
+-A POSTROUTING -o ppp0 -j MASQUERADE
+COMMIT

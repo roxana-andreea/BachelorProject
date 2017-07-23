@@ -1,0 +1,14 @@
+---
+- include: hosts.yml tags=hosts
+- include: network.yml tags=network
+- include: packages.yml tags=packages
+- include: supervisor.yml tags=supervisor
+- include: umtskeeper.yml tags=umtskeeper
+- include: dnsimple.yml tags=dnsimple
+- include: usb.yml tags=usb
+- include: ser2net.yml tags=ser2net
+- include: gps.yml tags=gps
+- include: can.yml tags=can
+- include: gammu.yml tags=gammu
+- include: obd.yml tags=obd
+

@@ -1,0 +1,4 @@
+---
+- template: src=etc/supervisor/conf.d/rpi-obd.conf dest=/etc/supervisor/conf.d/rpi-obd.conf
+  notify:
+    - restart supervisor

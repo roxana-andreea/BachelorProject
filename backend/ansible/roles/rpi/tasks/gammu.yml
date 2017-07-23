@@ -1,0 +1,11 @@
+---
+- template: src=etc/gammurc dest=/etc/gammurc
+  notify:
+    - restart gammu
+- template: src=etc/gammu-smsdrc dest=/etc/gammu-smsdrc
+  notify:
+    - restart gammu
+- service: name=gammu-smsd enabled=yes
+- command: cp -f /root/backend/rpi/sms_receive.py /usr/local/sbin/sms_receive.py
+- file: path=/usr/local/sbin/sms_receive.py mode=0777 owner=gammu group=gammu
+- lineinfile: dest=/etc/sudoers insertafter='^pi'  regexp='^gammu' line="gammu ALL=(ALL)NOPASSWD:ALL" state=present validate='visudo -cf %s'

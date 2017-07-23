@@ -1,0 +1,6 @@
+---
+- hosts: rpi
+  gather_facts: yes
+  roles:
+    - { role: rpi, tags: rpi }
+    # - { role: wifi, tags: wifi }

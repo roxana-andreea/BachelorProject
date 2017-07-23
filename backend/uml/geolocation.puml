@@ -1,0 +1,12 @@
+@startuml
+actor User
+database Server
+control VSS
+entity GPS
+autonumber
+VSS -> GPS: Geolocation Request
+GPS --> VSS: Geolocation Information
+VSS -> Server: Upload Location
+Smartphone <-- Server: Download Location
+Smartphone -> User: Display Location
+@enduml

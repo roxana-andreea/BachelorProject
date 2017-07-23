@@ -1,0 +1,4 @@
+---
+- include: packages.yml tags=packages
+- include: mysql.yml tags=mysql
+- include: supervisor.yml tags=supervisor

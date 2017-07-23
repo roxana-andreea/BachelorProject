@@ -1,0 +1,28 @@
+---
+- config:
+    - testset: "VSS REST API Unit Tests"
+
+- test:
+    - group: "POST"
+    - name: "Create device1 with POST"
+    - url: "/devices/"
+    - method: "POST"
+    - body: '{"name": "Test Car1","serial": "1111","id_user": "1"}'
+    - auth_username: "test@domain1"
+    - auth_password: "secret1"
+    - headers: {'Content-Type': 'application/json'}
+    - expected_status: [201,422]
+
+
+- test:
+    - group: "POST"
+    - name: "Create input1 with POST"
+    - url: "/inputs/"
+    - method: "POST"
+    - body: '{"pid": "11","value": "111", "id_user": "1","id_device": "1"}'
+    - auth_username: "test@domain1"
+    - auth_password: "secret1"
+    - headers: {'Content-Type': 'application/json'}
+    - expected_status: [201]
+
+

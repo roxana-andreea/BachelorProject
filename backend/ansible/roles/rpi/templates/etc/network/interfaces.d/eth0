@@ -1,0 +1,6 @@
+auto eth0
+    iface eth0 inet static
+    address 10.5.0.10
+    netmask 255.255.255.0
+    gateway 10.5.0.1
+    metric 0

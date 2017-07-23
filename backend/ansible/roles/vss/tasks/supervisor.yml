@@ -1,0 +1,5 @@
+---
+- template: src=supervisor/vss-api dest=/usr/local/bin/ mode=u+rwx
+- template: src=supervisor/vss-api.conf dest=/etc/supervisor/conf.d/
+  notify:
+    - update supervisor

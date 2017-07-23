@@ -1,0 +1,4 @@
+---
+- modprobe: name=can_raw state=present
+- modprobe: name=can_dev state=present
+- modprobe: name=usb_8dev state=present

@@ -1,0 +1,6 @@
+---
+- copy: src=ser2net dest=/usr/local/sbin/ser2net mode=750
+- template: src=etc/ser2net.conf dest=/etc/ser2net.conf
+  notify:
+    - restart ser2net
+- lineinfile: dest=/etc/rc.local insertbefore='^exit'  regexp='^ser2net' line='ser2net' state=present

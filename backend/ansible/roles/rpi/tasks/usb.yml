@@ -1,0 +1,2 @@
+---
+- modprobe: name=usbmon state=present

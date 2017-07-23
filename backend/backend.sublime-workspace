@@ -1,0 +1,627 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"line",
+				"lineinfile	lineinfile"
+			],
+			[
+				"lin",
+				"lineinfile	lineinfile"
+			],
+			[
+				"conn",
+				"connect_db	function"
+			],
+			[
+				"USB",
+				"USBMODEM"
+			],
+			[
+				"X",
+				"X	statement"
+			],
+			[
+				"if",
+				"if	If Condition"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "Packages/User/builds/VSS-Rsync.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Anaconda Python Builder",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Anaconda Python Builder",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				],
+				[
+					"Packages/User/builds/RPI-Makefile.sublime-build",
+					""
+				],
+				[
+					"Packages/User/builds/RPI-Python.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/User/builds/RPI-Makefile.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/User/builds/RPI-Rsync.sublime-build",
+					""
+				],
+				[
+					"Packages/User/builds/RPI-Rsync.sublime-build",
+					"Ansible"
+				]
+			],
+			[
+				"Packages/User/builds/RPI-Rsync.sublime-build",
+				"Ansible"
+			]
+		],
+		[
+			[
+				[
+					"Packages/User/builds/RPI-Rsync.sublime-build",
+					""
+				],
+				[
+					"Packages/User/builds/RPI-Rsync.sublime-build",
+					"RPI-Ansible"
+				]
+			],
+			[
+				"Packages/User/builds/RPI-Rsync.sublime-build",
+				"RPI-Ansible"
+			]
+		],
+		[
+			[
+				[
+					"Packages/User/builds/VSS-Rsync.sublime-build",
+					""
+				],
+				[
+					"Packages/User/builds/VSS-Rsync.sublime-build",
+					"Ansible"
+				],
+				[
+					"Packages/User/builds/VSS-Rsync.sublime-build",
+					"Django"
+				]
+			],
+			[
+				"Packages/User/builds/VSS-Rsync.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": ":w",
+		"selected_items":
+		[
+			[
+				":w",
+				":w - Save"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"arch",
+				"Tasks: Archive"
+			],
+			[
+				"gist",
+				"Gist: Insert Gist"
+			],
+			[
+				"gli",
+				"GLI: Create Issue"
+			],
+			[
+				"isntall",
+				"Package Control: Install Package"
+			],
+			[
+				"git status",
+				"Git: Status"
+			],
+			[
+				"git push",
+				"Git: Push"
+			],
+			[
+				"git pul",
+				"Git: Pull"
+			],
+			[
+				"git comm",
+				"Git: Commit"
+			],
+			[
+				"git add all",
+				"Git: Add All"
+			],
+			[
+				"git add",
+				"Git: Add All"
+			],
+			[
+				"git statu",
+				"Git: Status"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"prv",
+				"PackageResourceViewer: View Package Resource"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"rsync",
+				"rsync ssh: Initialize settings"
+			],
+			[
+				":1",
+				"Emmet: Decrement Number by 1"
+			],
+			[
+				"git stat",
+				"Git: Status"
+			],
+			[
+				"git stash",
+				"Git: Stash Changes"
+			],
+			[
+				"git head",
+				"Git: Reset (hard) HEAD"
+			],
+			[
+				"git ",
+				"Git: Reset (hard) HEAD"
+			],
+			[
+				"git log",
+				"Git: Log All"
+			],
+			[
+				"git pus",
+				"Git: Push"
+			],
+			[
+				"git",
+				"Git: Status"
+			],
+			[
+				"task",
+				"Tasks: New"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: re",
+				"Package Control: Remove Package"
+			],
+			[
+				"ident",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"pv",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"RPI-Py",
+				"Build With: RPI-Python"
+			],
+			[
+				"pylint",
+				"Preferences: SublimeLinter Key Bindings – Default"
+			],
+			[
+				"Instal",
+				"Package Control: Install Package"
+			],
+			[
+				"Install",
+				"Package Control: Install Package"
+			],
+			[
+				"Gist",
+				"Git: Status"
+			],
+			[
+				"snippe",
+				"Snippet: html"
+			],
+			[
+				"syntax htm",
+				"Set Syntax: HTML"
+			],
+			[
+				"Ansible",
+				"Set Syntax: Ansible"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"Insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 485.0
+	},
+	"console":
+	{
+		"height": 140.0,
+		"history":
+		[
+			"test,test,cristianlupu@,integration,PoC",
+			"test,test,Cristian Lupu,integration,PoC",
+			"help",
+			"clear",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/cristy/Dropbox/github/backend"
+	],
+	"file_history":
+	[
+		"/Users/cristy/Dropbox/github/backend/ansible/roles/rpi/handlers/main.yml",
+		"/Users/cristy/Dropbox/github/backend/rpi/dnsimple-python/update.py",
+		"/Users/cristy/Dropbox/github/backend/ansible/roles/rpi/templates/etc/ser2net.conf",
+		"/Users/cristy/Dropbox/github/backend/ansible/group_vars/all.yml",
+		"/Users/cristy/Dropbox/github/backend/ansible/roles/rpi/tasks/ser2net.yml",
+		"/Users/cristy/Dropbox/github/backend/ansible/roles/rpi/tasks/ddclient.yml",
+		"/Users/cristy/Dropbox/github/backend/README.md",
+		"/Users/cristy/Dropbox/github/backend/ansible/roles/vss/tasks/supervisor.yml",
+		"/Users/cristy/Dropbox/github/backend/ansible/roles/rpi/tasks/packages.yml",
+		"/Users/cristy/Dropbox/github/backend/backend.todo",
+		"/Users/cristy/Dropbox/github/backend/ansible/roles/vss/templates/supervisor/vss-api",
+		"/Users/cristy/Dropbox/github/backend/ansible/roles/vss/tasks/main.yml",
+		"/Users/cristy/Dropbox/github/backend/ansible/roles/vss/templates/supervisor/vss-api.conf",
+		"/Users/cristy/Dropbox/github/backend/ansible/ansible.cfg",
+		"/Users/cristy/Dropbox/github/backend/ansible/roles/vss/tasks/packages.yml",
+		"/Users/cristy/Dropbox/github/backend/ansible/roles/vss/handlers/main.yml",
+		"/Users/cristy/Dropbox/github/backend/ansible/roles/vss/tasks/mysql.yml",
+		"/Users/cristy/Dropbox/github/backend/ansible/roles/vss/templates/supervisor",
+		"/usr/local/lib/python3.5/site-packages/sqlalchemy/util/langhelpers.py",
+		"/Users/cristy/Dropbox/github/backend/python/api/api.py",
+		"/Users/cristy/Dropbox/github/backend/python/flask/index.py",
+		"/Users/cristy/Dropbox/github/backend/backend.sublime-project",
+		"/Users/cristy/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/cristy/Dropbox/github/backend/python/flask.py",
+		"/Users/cristy/Library/Application Support/Sublime Text 3/Packages/User/builds/RPI-Rsync.sublime-build",
+		"/Users/cristy/Dropbox/github/backend/ansible/roles/vss/templates/umtskeeper/umtskeeper.conf",
+		"/Users/cristy/Dropbox/github/backend/python/test.py",
+		"/Users/cristy/Dropbox/github/backend/ansible/roles/vss/tasks/umtskeeper.yml",
+		"/Users/cristy/Dropbox/github/backend/ansible/vss.yml",
+		"/Users/cristy/Library/Application Support/Sublime Text 3/Packages/User/GitlabIntegrate.sublime-settings",
+		"/Users/cristy/Dropbox/github/Laborator02/.git/MERGE_MSG",
+		"/Users/cristy/Library/Application Support/Sublime Text 3/Packages/User/builds/RPI-Makefile.sublime-build",
+		"/Users/cristy/Dropbox/github/backend/cpp/Makefile",
+		"/Users/cristy/Dropbox/github/backend/.gitignore",
+		"/Users/cristy/Downloads/test.html",
+		"/Users/cristy/Dropbox/github/backend/cpp/sms_send.cpp",
+		"/Users/cristy/Dropbox/github/backend/python/sms_send.py",
+		"/Users/cristy/Dropbox/github/backend/cgi/test.py",
+		"/Users/cristy/Library/Application Support/Sublime Text 3/Packages/User/PlainTasks.sublime-settings",
+		"/Users/cristy/Library/Application Support/Sublime Text 3/Packages/PlainTasks/PlainTasks (OSX).sublime-settings",
+		"/Users/cristy/Dropbox/github/backend/cpp/gps_standalone.cpp",
+		"/Users/cristy/Dropbox/github/backend/cpp/gps_s.cpp",
+		"/Users/cristy/Dropbox/github/backend/cgi/test.cgi",
+		"/Users/cristy/Dropbox/github/backend/cpp/gps_pic.cpp",
+		"/Users/cristy/Dropbox/github/backend/cpp/https_get.cpp",
+		"/Users/cristy/Dropbox/github/backend/cpp/http_get.cpp",
+		"/Users/cristy/Dropbox/github/backend/cpp/server_tcp.cpp",
+		"/Users/cristy/Dropbox/github/backend/cpp/client_multi.cpp",
+		"/Users/cristy/Dropbox/github/backend/client_multi.cpp",
+		"/Users/cristy/Dropbox/github/backend/cpp/client_udp.cpp",
+		"/Users/cristy/Dropbox/github/backend/cpp/tcp_client.cpp",
+		"/Users/cristy/Dropbox/github/backend/cpp/udp_client.cpp",
+		"/Users/cristy/Dropbox/github/backend/cpp/ftps_download.cpp",
+		"/Users/cristy/Dropbox/github/backend/cpp/ftp_download.cpp",
+		"/Users/cristy/Dropbox/github/backend/cpp/ftps_upload.cpp",
+		"/Users/cristy/Dropbox/github/backend/cpp/ftps_write.cpp",
+		"/Users/cristy/Dropbox/github/backend/cpp/ftp_upload.cpp",
+		"/Users/cristy/Dropbox/github/backend/cpp/ftp_write.cpp",
+		"/Users/cristy/Dropbox/github/backend/cpp/email_recv.cpp",
+		"/Users/cristy/Dropbox/github/backend/cpp/email_send.cpp",
+		"/Users/cristy/Dropbox/github/backend/cpp/sms_recv.cpp",
+		"/Users/cristy/Dropbox/github/backend/cpp/call_video.cpp",
+		"/Users/cristy/Dropbox/github/backend/cpp/photo.cpp",
+		"/Users/cristy/Dropbox/github/backend/cpp/video_rec.cpp",
+		"/Users/cristy/Dropbox/github/backend/cpp/sound_rec_play.cpp",
+		"/Users/cristy/Dropbox/github/backend/cpp/call_miss.cpp",
+		"/Users/cristy/Dropbox/github/backend/cpp/call_recv.cpp",
+		"/Users/cristy/Dropbox/github/backend/cpp/call_start.cpp",
+		"/Users/cristy/Dropbox/github/backend/python/test2.py",
+		"/Users/cristy/Library/Application Support/Sublime Text 3/Packages/User/AutoPep8.sublime-settings",
+		"/Users/cristy/Library/Application Support/Sublime Text 3/Packages/SublimeLinter/SublimeLinter.sublime-settings",
+		"/Users/cristy/Library/Application Support/Sublime Text 3/Packages/User/builds/RPI-Python.sublime-build",
+		"/Users/cristy/Library/Application Support/Sublime Text 3/Packages/AutoPEP8/AutoPep8.sublime-settings",
+		"/Users/cristy/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/cristy/Dropbox/github/backend/test.yaml",
+		"/Users/cristy/Library/Application Support/Sublime Text 3/Packages/SublimeLinter/Default (OSX).sublime-keymap",
+		"/Users/cristy/Dropbox/github/backend/test.sh",
+		"/Users/cristy/Dropbox/github/Laborator02/ActivityLifecycleMonitor/src/ro/pub/cs/systems/pdsd/lab02/graphicuserinterface/LifecycleMonitorActivity.java",
+		"/Users/cristy/Dropbox/github/Laborator02/ActivityLifecycleMonitor/AndroidManifest.xml",
+		"/Users/cristy/Library/Application Support/Sublime Text 3/Packages/HTML/html.sublime-snippet",
+		"/Users/cristy/Library/Application Support/Sublime Text 3/Packages/User/hello.sublime-snippet",
+		"/Users/cristy/Dropbox/github/backend/test.py",
+		"/Users/cristy/Library/Application Support/Sublime Text 3/Packages/User/Gist.sublime-settings",
+		"/Users/cristy/Library/Application Support/Sublime Text 3/Packages/Gist/Gist.sublime-settings",
+		"/Users/cristy/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/cristy/Dropbox/ACS/SI/Exam/Materie",
+		"/Users/cristy/Downloads/2015_PR_Topologie (1).net",
+		"/Users/cristy/Downloads/lab_6_ps/task_1.m",
+		"/Users/cristy/Downloads/lab_6_ps/task_2.m",
+		"/Users/cristy/Dropbox/ACS/MP/Examen/Subiecte.txt",
+		"/Users/cristy/Downloads/initial_configs/BobaFett.cfg",
+		"/Users/cristy/GNS3/projects/basic2routers/basic2routers.gns3",
+		"/Users/cristy/.env.sh",
+		"/Volumes/software/Windows.7.Ultimate/Nfo.nfo"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"minicom",
+			"class Input(CommonColumns):\n    \"\"\"A recorded entry of a data of a specified type, sent by the equipment of a certain user.\"\"\"\n    __tablename__ = 'Input'\n    id = Column(Integer, primary_key= True, autoincrement=True)\n    id_device = Column(Integer, ForeignKey(\"Device.id\"), nullable=False)\n    id_user = Column(Integer, ForeignKey('User.id'), nullable=False)\n    pid = Column(String(10), nullable=False)\n    value = Column(String(255),nullable=False)",
+			"python",
+			"^",
+			">>>",
+			"auth",
+			"gps_standalone",
+			"sms_send",
+			"sendATcommand",
+			"power_on",
+			"\n        ",
+			"pep",
+			"dry",
+			"html",
+			"<.*>",
+			"head",
+			"html",
+			"\n<",
+			"	",
+			"<title></title>",
+			"<.*>",
+			"Dalm",
+			"Dal",
+			"Dalmon",
+			"Dalton",
+			"License",
+			"license",
+			"License",
+			"license",
+			"License"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"> ",
+			"",
+			"gps_standalone",
+			"gps_standalone\n",
+			"sms_send: sms_send.cpp\n	$(CC) $(CFLAGS) sms_send.cpp arduPi.cpp -o bin/sms_send\n\n"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 183.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 100.0
+	},
+	"pinned_build_system": "Packages/User/builds/RPI-Rsync.sublime-build",
+	"project": "backend.sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"re",
+				"README.md"
+			],
+			[
+				"tod",
+				"backend.todo"
+			],
+			[
+				"read",
+				"README.md"
+			],
+			[
+				"todo",
+				"backend.todo"
+			],
+			[
+				"vs",
+				"ansible/vss.yml"
+			],
+			[
+				"vss",
+				"ansible/roles/vss/tasks/packages.yml"
+			],
+			[
+				"ig",
+				".gitignore"
+			],
+			[
+				"te",
+				"test.yaml"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 298.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

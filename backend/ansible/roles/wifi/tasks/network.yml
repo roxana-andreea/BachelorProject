@@ -1,0 +1,7 @@
+---
+# auto wlan0
+# allow-hotplug wlan0
+# iface wlan0 inet static
+# address 10.6.0.1
+# netmask 255.255.255.0
+# up iptables-restore < /etc/iptables.ipv4.nat

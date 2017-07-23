@@ -1,0 +1,9 @@
+log4j:WARN No appenders could be found for logger (io.netty.util.internal.logging.InternalLoggerFactory).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+Looking in classpath from com.intellij.util.lang.UrlClassLoader@223477 for /com/sun/jna/linux-x86-64/libjnidispatch.so
+Found library resource at jar:file:/opt/android-studio/lib/jna.jar!/com/sun/jna/linux-x86-64/libjnidispatch.so
+Trying /home/alexf/.AndroidStudio2.0/system/tmp/jna-92899848/jna1745857533994977540.tmp
+Found jnidispatch at /home/alexf/.AndroidStudio2.0/system/tmp/jna-92899848/jna1745857533994977540.tmp
+[  10631]   WARN - dea.updater.SdkComponentSource - File /home/alexf/.android/repositories.cfg could not be loaded. 
+[18477408]   WARN - pl.local.NativeFileWatcherImpl - Watcher terminated with exit code 0 

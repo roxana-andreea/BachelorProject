@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!--<EditTextPreference android:title="Your Name"
+        android:key="username"
+        android:summary="Please provide your username"></EditTextPreference>
+    <CheckBoxPreference android:title="Application Updates"
+        android:defaultValue="false"
+        android:summary="This option if selected will allow the application to check for latest versions."
+        android:key="applicationUpdates" />
+
+    <ListPreference     android:title="Download Details"
+        android:summary="Select the kind of data that you would like to download"
+        android:key="downloadType"
+        android:defaultValue="1"
+        android:entries="@array/setttingsListArray"
+        android:entryValues="@array/setttingsListValues"
+        />
+
+    -->
+    <com.remotecarcontrol.homemenu.settings.CarSelectPreference
+        android:title="Select car"
+        android:id="@+id/car_select_preference"
+        android:summary="Select car to be tracked"
+        android:key="selected_car"
+
+        android:entries="@array/setttingsListArray"
+        android:entryValues="@array/setttingsListValues"
+        />
+
+
+    <PreferenceCategory android:title="Notifications">
+
+        <PreferenceScreen
+            android:key="second_preferencescreen"
+            android:title="Speed Limit Notification">
+
+            <PreferenceCategory android:title="Speed Limit Notification">
+                <SwitchPreference
+                    android:id="@+id/speed_limit_notification_switch"
+                    android:title="Enable/Disable"
+                    android:defaultValue="false"
+                    android:key="speed_limit_enabled"
+                    >
+                </SwitchPreference>
+                <EditTextPreference
+                    android:id="@+id/speed_limit_tv"
+                    android:title="Set speed limit"
+                    android:key="speed_limit"
+                    android:inputType="number"
+                    android:hint="60 km/h"
+                    ></EditTextPreference>
+
+            </PreferenceCategory>
+        </PreferenceScreen>
+        <PreferenceScreen
+            android:key="third_preferencescreen"
+            android:title="Temperature Limit Notification">
+
+            <PreferenceCategory android:title="Temperature Notification">
+                <SwitchPreference
+                    android:id="@+id/temperature_limit_notification_switch"
+                    android:title="Enable/Disable"
+                    android:defaultValue="false"
+                    android:key="temp_limit_enabled"
+                    >
+                </SwitchPreference>
+                <EditTextPreference
+                    android:id="@+id/temperature_limit_tv"
+                    android:title="Set temperature limit"
+                    android:key="temp_limit"
+                    android:inputType="number"
+                    android:hint="℃"
+                    ></EditTextPreference>
+
+            </PreferenceCategory>
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:key="forth_preferencescreen"
+            android:title="Fuel Limit Notification">
+
+            <PreferenceCategory android:title="Fuel Notification">
+                <SwitchPreference
+                    android:id="@+id/fuel_limit_notification_switch"
+                    android:title="Enable/Disable"
+                    android:defaultValue="false"
+                    android:key="fuel_limit_enabled"
+                    >
+                </SwitchPreference>
+                <EditTextPreference
+                    android:id="@+id/fuel_limit_tv"
+                    android:key="fuel_limit"
+                    android:title="Set fuel limit"
+                    android:inputType="number"
+                    android:hint="%"
+                    ></EditTextPreference>
+
+            </PreferenceCategory>
+        </PreferenceScreen>
+
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Account Control">
+        <com.remotecarcontrol.homemenu.settings.LogoutPreference
+            android:title="Logout"
+            >
+        </com.remotecarcontrol.homemenu.settings.LogoutPreference>
+    </PreferenceCategory>
+
+</PreferenceScreen>

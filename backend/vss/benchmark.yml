@@ -1,0 +1,27 @@
+---
+- config:
+    - testset: "Benchmark tests using test app"
+
+- benchmark: # create entity
+    - name: "Basic get"
+    - url: "/users/"
+    - warmup_runs: 7
+    - 'benchmark_runs': '101'
+    - output_file: 'miniapp-benchmark.csv'
+    - metrics:
+        - total_time
+        - total_time: mean
+        - total_time: median
+        - size_download
+        - speed_download: median
+    - auth_username: "admin@domain"
+    - auth_password: "secret"
+
+- benchmark: # create entity
+    - name: "Get single person"
+    - url: "/users/1/"
+    - metrics: {speed_upload: median, speed_download: median, redirect_time: mean}
+    - output_format: json
+    - output_file: 'miniapp-single.json'
+    - auth_username: "test@domain1"
+    - auth_password: "secret1"

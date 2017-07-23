@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">HomeMenu</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_dashboard">DashboardActivity</string>
+    <string name="title_activity_gps">GPSActivity</string>
+    <string name="title_activity_status">StatusActivity</string>
+    <string name="title_activity_alerts">AlertsActivity</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+</resources>

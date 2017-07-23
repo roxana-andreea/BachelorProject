@@ -1,0 +1,3 @@
+---
+- service: name=hostapd state=enabled
+- service: name=udhcpd state=disabled

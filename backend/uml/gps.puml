@@ -1,0 +1,12 @@
+@startuml
+(*)  --> "Connect to modem"
+"Connect to modem" --> "Setup A-GPS parameters"
+"Setup A-GPS parameters" --> "Get location parameters"
+If "modem still initializing" then
+--> [Yes] "data upload to API and retry later"
+--> "Get location parameters"
+else
+--> "retry until initialization is finished"
+Endif
+-->(*)
+@enduml

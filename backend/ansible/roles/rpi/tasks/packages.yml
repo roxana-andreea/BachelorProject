@@ -1,0 +1,42 @@
+---
+# mandatory
+- apt: name={{item}}
+  with_items:
+    - vim
+    - lsof
+    - zip
+    - bc
+    - telnet
+    - libncurses5-dev
+    - dkms
+    - mlocate
+    - usb-modeswitch
+    - ppp
+    - i2c-tools
+    - python3-serial
+    - ddclient
+    - whois
+    - bridge-utils
+    - tshark
+    - bluetooth
+    - pi-bluetooth
+    - dkms
+    - ufw
+    - gammu
+    - gammu-smsd
+    - ifmetric
+    - tcpdump
+    - minicom
+    - cutecom
+    - supervisor
+    - can-utils
+    - libsdl2-dev
+    - libsdl2-image-dev
+    - wammu
+
+
+- pip:  executable=pip3  name={{item}}
+  with_items:
+    - python-can
+    - ipython
+    - ConfigParser

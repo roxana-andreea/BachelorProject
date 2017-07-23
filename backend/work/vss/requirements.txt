@@ -1,0 +1,12 @@
+Flask
+Flask-Script
+Flask-SQLAlchemy
+WTForms
+Flask-RESTful
+Sphinx
+flask-autodoc
+sphinxcontrib-httpdomain
+Flask-Restless
+gunicorn
+fake-factory
+flask-restless-swagger

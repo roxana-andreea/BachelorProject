@@ -1,0 +1,11 @@
+eve
+eve-sqlalchemy
+Flask-SQLAlchemy
+#py-bcrypt
+Eve-docs
+# Mocker
+#eve-mocker
+#sure
+pyresttest
+future
+requests

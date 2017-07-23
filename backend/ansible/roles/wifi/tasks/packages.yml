@@ -1,0 +1,6 @@
+---
+# mandatory
+- apt: name={{item}}
+  with_items:
+    - udhcpd
+    - hostapd

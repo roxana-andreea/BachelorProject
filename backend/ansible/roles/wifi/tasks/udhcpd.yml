@@ -1,0 +1,7 @@
+---
+- template: backup=yes  src=etc/udhcpd.conf dest=/etc/udhcpd.conf
+  notify:
+    - restart udhcpd
+- template: backup=yes  src=etc/default/udhcpd dest=/etc/default/udhcpd
+  notify:
+    - restart udhcpd

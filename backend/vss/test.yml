@@ -1,0 +1,123 @@
+---
+- config:
+    - testset: "VSS REST API Unit Tests"
+
+- test:
+    - group: "Index"
+    - name: "Retrieve main index information"
+    - url: "/"
+
+- test:
+    - group: "User"
+    - name: "Create user1 with POST"
+    - url: "/users/"
+    - method: "POST"
+    - body: '{"name": "Test User1","login": "test@domain1","password": "secret1"}'
+    - headers: {'Content-Type': 'application/json'}
+    - expected_status: [201,422]
+    - extracted_binds:
+      - 'id_user1': {'jsonpath_mini': 'id'}
+
+- test:
+    - group: "User"
+    - name: "Create user2 with POST"
+    - url: "/users/"
+    - method: "POST"
+    - body: '{"name": "Test User2","login": "test@domain2","password": "secret2"}'
+    - headers: {'Content-Type': 'application/json'}
+    - expected_status: [201,422]
+    - extracted_binds:
+      - 'id_user2': {'jsonpath_mini': 'id'}
+
+
+- test:
+    - group: "User"
+    - name: "Create an user with PUT"
+    - url: "/users/99/"
+    - method: "PUT"
+    - body: '{"name": "Test User99", "id": 99, "login": "test@domain99", "password": "secret99"}'
+    - headers: {'Content-Type': 'application/json'}
+    - expected_status: [201,422,403]
+#    - extracted_binds:
+#      - '_etag': {'jsonpath_mini': '_etag'}
+#    - validators:
+#      - extract_test: {jsonpath_mini: "_etag",  test: "exists"}
+
+- test:
+    - group: "User"
+    - name: "Get specific user information"
+    - url: "/users/99/"
+    - method: "GET"
+    - auth_username: "test@domain99"
+    - auth_password: "secret99"
+    - headers: {'Content-Type': 'application/json'}
+    - expected_status: [200]
+
+- test:
+    - group: "User"
+    - name: "Authentication using basic auth"
+    - url: "/users"
+    - auth_username: "test@domain1"
+    - auth_password: "secret1"
+    - expected_status: [200]
+
+- test:
+    - group: "Device"
+    - name: "Create device1 with POST"
+    - url: "/devices/"
+    - method: "POST"
+    - body: '{"name": "Test Car1","serial": "1111","id_user": "1"}'
+    - auth_username: "test@domain1"
+    - auth_password: "secret1"
+    - headers: {'Content-Type': 'application/json'}
+    - expected_status: [201,422]
+
+- test:
+    - group: "Input"
+    - name: "Create input1 with POST"
+    - url: "/inputs/"
+    - method: "POST"
+    - body: '{"pid": "11","value": "111", "id_user": "1","id_device": "1"}'
+    - auth_username: "test@domain1"
+    - auth_password: "secret1"
+    - headers: {'Content-Type': 'application/json'}
+    - expected_status: [201]
+
+#- test:
+#    - group: "DELETE"
+#    - name: "Delete an user"
+#    - url: "/users/99/"
+#    - auth_username: "test@domain99"
+#    - auth_password: "secret99"
+#    - headers: {'If-Match': {template: "$_etag"}}
+#    - method: 'DELETE'
+#    - expected_status: [204]
+
+#- test:
+#    - group: "DELETE"
+#    - name: "Make sure the user has been deleted"
+#    - url: "/users/99/"
+#    - auth_username: "admin@domain"
+#    - auth_password: "secret"
+#    - expected_status: [404]
+
+- test:
+    - group: "User"
+    - name: "Retrieve user information"
+    - auth_username: "test@domain1"
+    - auth_password: "secret1"
+    - url: "/users"
+
+- test:
+    - group: "Device"
+    - name: "Retrieve device information"
+    - auth_username: "test@domain1"
+    - auth_password: "secret1"
+    - url: "/devices"
+
+- test:
+    - group: "Input"
+    - name: "Retrieve input information"
+    - auth_username: "test@domain1"
+    - auth_password: "secret1"
+    - url: "/inputs"

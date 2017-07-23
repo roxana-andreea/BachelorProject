@@ -1,0 +1,72 @@
+Development:
+ ☐ if location empty, don't upload to API
+ ☐ if modem not connected, error to log
+ ✔ insert location into the API manually @done (18-06-16 13:36)
+Problems:
+Deployment:
+ ✔ setup fixed IP address for RPI3 @done (17-06-16 23:15)
+ ✔ compile CAN2USB kernel module @done (19-06-16 13:03)
+ ✔ setup umtskeeper at start-up @done (18-06-16 13:36)
+ ☐ setup apache with wsgi
+ ☐ insert location at start-up
+Integration testing:
+  ☐ test SMS receiving daemon + custom script
+  ☐ test A-GPS
+Documentation:
+Admin:
+Hardware:
+  ☐ search a case for both RPI and shield
+Archive:
+ ✔ Integration testing: send a HTTP request using 3G @done (24-03-16 20:40)
+ ✔ Integration testing: test gammu with SMS @done (24-03-16 20:39)
+ ✔ Problems: no info retrieved from GPS when running AT+GPSINFO @done (21-03-16 21:59)
+ ✔ Integration testing: test S-GPS @done (21-03-16 21:59)
+ ✔ Integration testing: Find solution for dynamic DNS / FQDN @done (21-03-16 21:59)
+ ✔ Hardware: External GPS antenna @done (21-03-16 21:59)
+ ✔ Problems: modem consumes too much power in USB gateway mode @done (20-03-16 20:12)
+ ✔ Deployment: setup ddclient with free dyndns service @done (20-03-16 19:28)
+ ✔ Documentation: create architecture diagram @done (19-03-16 17:32)
+ ✔ Integration testing: read basic sensors from OBD-II (temp, engine rpm) @done (19-03-16 13:24)
+ ✔ Hardware: Dupont male-female cables @done (19-03-16 13:24)
+ ✔ Problems: cansend over wifi interface does not work @done (19-03-16 13:23)
+ ✔ Problems: USB connection not recognized in linux /dev/USB @done (19-03-16 13:23)
+ ✔ Integration testing: OBD-II connection using Wi-Fi in Linux @done (19-03-16 13:23)
+ ✔ Documentation: start document using sample structure @done (17-06-16 18:53)
+ ✔ Documentation: create WBS topics lucrare licenta @done (17-06-16 18:53)
+ ✔ Deployment: split ansible into 2 roles: vss and rpi @done (17-06-16 18:53)
+ ✔ Phase 1 Development: Apache/nginx WSGI setup @done (17-06-16 18:52)
+ ✔ Phase 1 Development: connect flask-restful with SQL alchemy @done (16-05-16 08:38)
+ ✔ Problems: 3G chip does not power on RPI start-up @done (16-03-22 17:59)
+ ✔ Problems: private ip address assigned to 3G connection, can't connect to RPI directly from mobile phone @done (16-03-22 17:54)
+ ✔ Admin: configure VPN to connect remotely to pi @done (16-03-22 17:34)
+ ✔ Deployment: setup tcpdump on iPhone / Android @done (16-03-17 09:35)
+ ✔ Deployment: add hostapd/udhcpd in Ansible @done (16-03-17 09:35)
+ ✔ Phase 1 Development: Flask-RESTful @done (15-05-16 22:36)
+ ✔ Phase 1 Development: error handler @done (15-05-16 20:31)
+ ✔ Hardware: Wi-fi adapter @done (15-03-16 12:20)
+ ✔ Hardware: Bluetooth adapter @done (15-03-16 12:20)
+ ✔ Phase 1 Development: flask first API method @done (14-05-16 08:28)
+ ✔ Phase 1 Development: create flask initial structure @done (14-05-16 08:28)
+ ✔ Phase 1 Development: create SQL Alchemy initial ORM @done (14-05-16 08:28)
+ ✔ Problems: A-GPS setup requires Server URL (Where to get it from?) @done (10-03-16 07:13)
+ ✔ Problems: SIM5218 modem acting unstable during testing @done (08-03-16 09:27)
+ ✔ Integration testing: Test RPI with SIM5218 in gateway mode (USB) using AT @done (08-03-16 09:26)
+ ✔ Integration testing: Test RPI with SIM5218 in embedded mode (UART) using AT @done (08-03-16 09:26)
+ ✔ Admin: configure Sublime as IDE for Python/RPI programming @done (08-03-16 09:21)
+ ✔ Deployment: Setup Apache to run python CGI scripts @done (08-03-16 09:20)
+ ✔ Deployment: Initial OS configuration @done (08-03-16 09:19)
+ ✔ Hardware: SD Card @done (08-03-16 09:18)
+ ✔ Deployment: Upgrade firmware @done (08-03-16 09:18)
+ ✔ Deployment: Install OS on PI @done (08-03-16 09:18)
+ ✔ Hardware: Camera @done (08-03-16 09:17)
+ ✔ Documentation: add initial installation/configuration to README.md file @done (08-03-16 09:16)
+ ✔ Admin: setup private git repository for code @done (08-03-16 09:15)
+ ✔ Integration testing: Internet connection using 3G modem/ppp in gateway mode @done (08-03-16 09:14)
+ ✔ Integration testing: SMS send @done (08-03-16 09:13)
+ ✔ Integration testing: SMS receive @done (08-03-16 09:13)
+ ✔ Integration testing: 3G SIM network connected @done (08-03-16 09:13)
+ ✔ Hardware: Remote infrared @done (08-03-16 09:12)
+ ✔ Hardware: Internal GPS/GSM antenna @done (08-03-16 09:11)
+ ✔ Hardware: Sensors @done (08-03-16 09:10)
+ ✔ Hardware: Raspberry PI @done (08-03-16 09:10)
+ ✔ Hardware: Bluetooth OBD @done (06-05-16 06:30)
